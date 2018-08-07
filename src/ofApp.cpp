@@ -3,16 +3,30 @@
 //--------------------------------------------------------------
 void ofApp::setup(){
 
+    //  OF Settings
+    ofBackground(0);
+    ofSetFrameRate(60);
+    ofHideCursor();
+    
+    //  Particles
+    particles.setup(x_dim, y_dim);
 }
 
 //--------------------------------------------------------------
 void ofApp::update(){
 
+    ofSetWindowTitle(ofToString(ofGetFrameRate(), 2));
+    particles.update();
 }
 
 //--------------------------------------------------------------
 void ofApp::draw(){
 
+    cam.begin();
+    ofEnableBlendMode(OF_BLENDMODE_ALPHA);
+    particles.draw();
+    ofDisableBlendMode();
+    cam.end();
 }
 
 //--------------------------------------------------------------

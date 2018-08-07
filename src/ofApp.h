@@ -2,6 +2,8 @@
 
 #include "ofMain.h"
 
+#include "GParticles.h"
+
 class ofApp : public ofBaseApp{
 
 	public:
@@ -21,4 +23,13 @@ class ofApp : public ofBaseApp{
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
 		
+    //  Particles
+    GParticles particles;
+    
+    //  Camera
+    ofEasyCam cam;
+    
+    //  Constants
+    const int x_dim = 1440;
+    const int y_dim = 1440;
 };
